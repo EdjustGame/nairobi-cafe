@@ -1,313 +1,495 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Nairobi Cafe</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f2ebe5;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAIROBI CAFE</title>
 
-        header {
-            background-color: #000000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .menu-container {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-        h2 {
-            border-bottom: 2px solid #000000;
-            padding-bottom: 5px;
-            color: #000000;
-        }
+body{
+    background:#111;
+    color:#fff;
+    scroll-behavior:smooth;
+}
 
-        .menu-section {
-            margin-bottom: 30px;
-        }
+section{
+    padding:70px 20px;
+}
 
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            background-color: white;
-            padding: 12px 16px;
-            margin: 8px 0;
-            border-radius: 6px;
-        }
+h2{
+    text-align:center;
+    color:#f4c430;
+    margin-bottom:40px;
+    font-size:2rem;
+}
 
-        .price {
-            font-weight: bold;
-            color: #000000;
-        }
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+    url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+}
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #ddd;
-            font-size: 14px;
-        }
-    </style>
+.hero h1{
+    font-size:3rem;
+    letter-spacing:4px;
+    color:#f4c430;
+}
+
+.hero p{
+    margin-top:15px;
+}
+
+.btn{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    background:#f4c430;
+    color:#000;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:30px;
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:#fff;
+    transform:scale(1.05);
+}
+
+/* MENU GRID */
+.menu-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:#1c1c1c;
+    padding:25px;
+    border-radius:15px;
+    transition:0.4s;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:#222;
+}
+
+.card h3{
+    color:#f4c430;
+    margin-bottom:10px;
+}
+
+.price{
+    margin-top:10px;
+    font-weight:600;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    font-size:0.9rem;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .hero h1{
+        font-size:2.2rem;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>NAİROBİ CAFE</h1>
-    <p>Bir yudum, bin his.</p>
-</header>
+<section class="hero">
+    <h1>NAIROBI CAFE</h1>
+    <p>Lezzetin ve sıcaklığın buluşma noktası</p>
+    <a href="#kahveler"><button class="btn">Menüyü Gör</button></a>
+</section>
 
-<div class="menu-container">
+<!-- KAHVELER -->
+<section id="kahveler">
+    <h2>Kahveler</h2>
+    <div class="menu-container">
+      <div class="card">
+            <h3>Türk Kahvesi</h3>
+            <div class="price">₺80</div>
+        </div>
+      
+      <div class="card">
+            <h3>Double Türk Kahvesi</h3>
+            <div class="price">₺150</div>
+      </div> 
 
-    <div class="menu-section">
-        <h2>Kahveler</h2>
-        <div class="menu-item">
-            <span>Türk Kahvesi</span>
-            <span class="price">80 TL</span>
+      <div class="card">
+            <h3>Espresso</h3>
+            <div class="price">₺80</div>
         </div>
-        <div class="menu-item">
-            <span>Double Türk Kahvesi</span>
-            <span class="price">150 TL</span>
+
+              <div class="card">
+            <h3>Double Espresso</h3>
+            <div class="price">₺150</div>
         </div>
-        <div class="menu-item">
-            <span>Espresso</span>
-            <span class="price">80 TL</span>
+
+              <div class="card">
+            <h3>Americano</h3>
+            <div class="price">₺110</div>
         </div>
-        <div class="menu-item">
-            <span>Double Espresso</span>
-            <span class="price">110 TL</span>
+
+        <div class="card">
+            <h3>Americano(ICE)</h3>
+            <div class="price">₺150</div>
         </div>
-            <div class="menu-item">
-            <span>Americano</span>
-            <span class="price">110 TL</span>
+
+        <div class="card">
+            <h3>Filtre Kahve</h3>
+            <div class="price">₺110</div>
         </div>
-            <div class="menu-item">
-            <span>Filtre Kahve</span>
-            <span class="price">110 TL</span>
+
+        <div class="card">
+            <h3>Cafe Latte</h3>
+            <div class="price">₺150</div>
         </div>
-            <div class="menu-item">
-            <span>Risretto</span>
-            <span class="price">100 TL</span>
+
+        <div class="card">
+            <h3>Espresso Machiato</h3>
+            <div class="price">₺150</div>
         </div>
-            <div class="menu-item">
-            <span>Cafe Latte</span>
-            <span class="price">150 TL</span>
+
+        <div class="card">
+            <h3>Latte Machiato</h3>
+            <div class="price">₺150</div>
         </div>
-            <div class="menu-item">
-            <span>Espresso Machiato</span>
-            <span class="price">150 TL</span>
+
+        <div class="card">
+            <h3>Cappucino</h3>
+            <div class="price">₺150</div>
         </div>
-            <div class="menu-item">
-            <span>Latte Machiato</span>
-            <span class="price">150 TL</span>
+
+        <div class="card">
+            <h3>Chocolate Mocha</h3>
+            <div class="price">₺150</div>
         </div>
-            <div class="menu-item">
-            <span>Cappucino</span>
-            <span class="price">150 TL</span>
+
+        <div class="card">
+            <h3>White Chocolate Mocha</h3>
+            <div class="price">₺160</div>
         </div>
-            <div class="menu-item">
-            <span>Chocolate Mocha</span>
-            <span class="price">150 TL</span>
+
+        <div class="card">
+            <h3>Nescafe</h3>
+            <div class="price">₺100</div>
         </div>
-            <div class="menu-item">
-            <span>White Chocolate Mocha</span>
-            <span class="price">160 TL</span>
+
+        <div class="card">
+            <h3>Sütlü Nescafe</h3>
+            <div class="price">₺110</div>
         </div>
-                  <div class="menu-item">
-            <span>Extra Kahve Şurupları</span>
-            <span class="price">15 TL</span>
-        </div>
-                  <div class="menu-item">
-            <span>Nescafe</span>
-            <span class="price">100 TL</span>
-        </div>
-                  <div class="menu-item">
-            <span>Sütlü Nescafe</span>
-            <span class="price">110 TL</span>
-        </div>
-        
-    </div>
-     <div class="menu-section">
-        <h2>Sıcak İçecekler</h2>
-        <div class="menu-item">
-            <span>Çay</span>
-            <span class="price">30 TL</span>
-        </div>
-        <div class="menu-item">
-            <span>Fincan Çay</span>
-            <span class="price">50 TL</span>
-        </div>
-        <div class="menu-item">
-            <span>Oralet Çeşitleri</span>
-            <span class="price">30 TL</span>
-        </div>
-        <div class="menu-item">
-            <span>Papatya Çayı</span>
-            <span class="price">150 TL</span>
-        </div>
-               <div class="menu-item">
-            <span>Kış Çayı</span>
-            <span class="price">170 TL</span>
-        </div>
-               <div class="menu-item">
-            <span>Ihlamur</span>
-            <span class="price">160 TL</span>
-        </div>
-               <div class="menu-item">
-            <span>Sıcak Çikolata</span>
-            <span class="price">120 TL</span>
-        </div>
-               <div class="menu-item">
-            <span>Beyaz Çikolata</span>
-            <span class="price">120 TL</span>
-        </div>
-               <div class="menu-item">
-            <span>Salep</span>
-            <span class="price">120 TL</span>
+
+        <div class="card">
+            <h3>Extra Kahve Şurupları</h3>
+            <div class="price">₺15</div>
         </div>
     </div>
+</section>
 
-    <div class="menu-section">
-        <h2>Soğuk İçecekler</h2>
-        <div class="menu-item">
-            <span>Su</span>
-            <span class="price">30 TL</span>
+<!-- SOĞUK İÇECEKLER -->
+<section id="soguk">
+    <h2>Soğuk İçecekler</h2>
+    <div class="menu-container">
+        <div class="card">
+            <h3>Su(200ml)</h3>
+            <div class="price">₺15</div>
         </div>
-        <div class="menu-item">
-            <span>Meyvesuyu</span>
-            <span class="price">30 TL</span>
+
+        <div class="card">
+            <h3>Su(500ml)</h3>
+            <div class="price">₺30</div>
         </div>
-        <div class="menu-item">
-            <span>Sıkma Meyvesuyu</span>
-            <span class="price">180 TL</span>
+
+        <div class="card">
+            <h3>Meyvesuyu(Kutu/200ml)</h3>
+            <div class="price">₺30</div>
         </div>
-               <div class="menu-item">
-            <span>Milkshake</span>
-            <span class="price">160 TL</span>
+
+        <div class="card">
+            <h3>Redbull(250ml)</h3>
+            <div class="price">₺150</div>
         </div>
-               <div class="menu-item">
-            <span>Redbull</span>
-            <span class="price">150 TL</span>
+
+        <div class="card">
+            <h3>Kutu İçecek(Kola-Fante-Gazoz-Ice Tea/330ml)</h3>
+            <div class="price">₺75</div>
         </div>
-               <div class="menu-item">
-            <span>Churchill</span>
-            <span class="price">90 TL</span>
+
+        <div class="card">
+            <h3>Churchill</h3>
+            <div class="price">₺90</div>
         </div>
-               <div class="menu-item">
-            <span>Kutu İçecek</span>
-            <span class="price">75 TL</span>
+
+        <div class="card">
+            <h3>Soda(Sade/200ml)</h3>
+            <div class="price">₺60</div>
         </div>
-               <div class="menu-item">
-            <span>Sade Soda</span>
-            <span class="price">60 TL</span>
+
+        <div class="card">
+            <h3>Soda(Meyveli/200ml)</h3>
+            <div class="price">₺70</div>
         </div>
-               <div class="menu-item">
-            <span>Meyveli Soda</span>
-            <span class="price">70 TL</span>
+
+        <div class="card">
+            <h3>Ayran(200ml)</h3>
+            <div class="price">₺40</div>
         </div>
-               <div class="menu-item">
-            <span>Ayran</span>
-            <span class="price">40 TL</span>
+
+        <div class="card">
+            <h3>Ayran(300ml)</h3>
+            <div class="price">₺50</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SOĞUK İÇECEKLER -->
+<section id="sicak">
+    <h2>Sıcak İçecekler</h2>
+    <div class="menu-container">
+        <div class="card">
+            <h3>Çay</h3>
+            <div class="price">₺30</div>
+        </div>
+
+        <div class="card">
+            <h3>Fincan Çay</h3>
+            <div class="price">₺50</div>
+        </div>
+
+        <div class="card">
+            <h3>Oralet Çeşitleri</h3>
+            <div class="price">₺30</div>
+        </div>
+
+        <div class="card">
+            <h3>Papatya Çayı</h3>
+            <div class="price">₺150</div>
+        </div>
+
+        <div class="card">
+            <h3>Kış Çayı</h3>
+            <div class="price">₺170</div>
+        </div>
+
+        <div class="card">
+            <h3>Ihlamur</h3>
+            <div class="price">₺160</div>
+        </div>
+
+        <div class="card">
+            <h3>Sıcak Çikolata</h3>
+            <div class="price">₺120</div>
+        </div>
+
+        <div class="card">
+            <h3>Salep</h3>
+            <div class="price">₺120</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- TATLILAR -->
+<section id="tatlilar">
+    <h2>Günlük Taze Tatlılar</h2>
+    <div class="menu-container">
+        <div class="card">
+            <h3>Trileçe</h3>
+            <div class="price">₺220</div>
+        </div>
+
+        <div class="card">
+            <h3>Tiramisu</h3>
+            <div class="price">₺200</div>
+        </div>
+
+        <div class="card">
+            <h3>Magnolya</h3>
+            <div class="price">₺150</div>
+        </div>
+
+        <div class="card">
+            <h3>Ekler</h3>
+            <div class="price">₺145</div>
+        </div>
+
+        <div class="card">
+            <h3>Rulo Pasta</h3>
+            <div class="price">₺225</div>
+        </div>
+
+        <div class="card">
+            <h3>Profiterol</h3>
+            <div class="price">₺170</div>
+        </div>
+
+        <div class="card">
+            <h3>Soğuk Baklava</h3>
+            <div class="price">₺200</div>
+        </div>
+
+        <div class="card">
+            <h3>Sütlaç</h3>
+            <div class="price">₺150</div>
         </div>
     </div>
+</section>
 
-    <div class="menu-section">
-        <h2>Tost Çeşitleri</h2>
-        <div class="menu-item">
-            <span>Karışık Tost</span>
-            <span class="price">150 TL</span>
+<!-- ATIŞTIRMALIK -->
+<section id="tost">
+    <h2>Tost Çeşitleri</h2>
+    <div class="menu-container">
+        <div class="card">
+            <h3>Karışık Tost</h3>
+            <div class="price">₺160</div>
         </div>
-        <div class="menu-item">
-            <span>Sucuklu Tost</span>
-            <span class="price">140 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Kaşarlı Tost</span>
-            <span class="price">130 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Patso</span>
-            <span class="price">120 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Kumru Tost</span>
-            <span class="price">150 TL</span>
-        </div>
-    </div>
 
-        <div class="menu-section">
-        <h2>Yemek Çeşitleri</h2>
-        <div class="menu-item">
-            <span>Anne Poğaçası (Adet)</span>
-            <span class="price">30 TL</span>
+        <div class="card">
+            <h3>Sucuklu Tost</h3>
+            <div class="price">₺140</div>
         </div>
-        <div class="menu-item">
-            <span>Simit Kahvaltı Tabağı (Sınırsız Çay)</span>
-            <span class="price">250 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Hamburger Menü</span>
-            <span class="price">330 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Patates Kızartması</span>
-            <span class="price">130 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Lüks Çerez Tabağı</span>
-            <span class="price">200 TL</span>
-        </div>
-                      <div class="menu-item">
-            <span>Tuzlu Fıstık</span>
-            <span class="price">100 TL</span>
-        </div>
-                      <div class="menu-item">
-            <span>Peynirli Sandviç</span>
-            <span class="price">110 TL</span>
-        </div>
-                             <div class="menu-item">
-            <span>Peynirli Domatesli Sandviç</span>
-            <span class="price">120 TL</span>
-        </div>
-                             <div class="menu-item">
-            <span>Jambon Salamlı Sandviç</span>
-            <span class="price">200 TL</span>
-        </div>
-    </div>
-    <div class="menu-section">
-        <h2>Günlük Tatlı Çeşitleri</h2>
-        <div class="menu-item">
-            <span>Trileçe</span>
-            <span class="price">200 TL</span>
-        </div>
-        <div class="menu-item">
-            <span>Tiramisu</span>
-            <span class="price">250 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Magnolya</span>
-            <span class="price">150 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Ekler (4 Adet)</span>
-            <span class="price">125 TL</span>
-        </div>
-                <div class="menu-item">
-            <span>Profiterol</span>
-            <span class="price">150 TL</span>
-        </div>
-    </div>
 
-</div>
+        <div class="card">
+            <h3>Kaşarlı Tost</h3>
+            <div class="price">₺130</div>
+        </div>
+
+        <div class="card">
+            <h3>Kavurmalı Kaşarlı Tost</h3>
+            <div class="price">₺250</div>
+        </div>
+
+        <div class="card">
+            <h3>Patso</h3>
+            <div class="price">₺130</div>
+        </div>
+
+    </div>
+</section>
+
+<section id="yemek">
+    <h2>Yemek Çeşitleri</h2>
+    <div class="menu-container">
+        <div class="card">
+            <h3>Simit Tabağı(Sınırsız Çay)</h3>
+            <div class="price">₺250</div>
+        </div>
+
+        <div class="card">
+            <h3>Menemen</h3>
+            <div class="price">₺150</div>
+        </div>
+
+        <div class="card">
+            <h3>Sigara Böreği(4 Adet)</h3>
+            <div class="price">₺150</div>
+        </div>
+
+        <div class="card">
+            <h3>Hamburger Menü</h3>
+            <div class="price">₺330</div>
+        </div>
+
+        <div class="card">
+            <h3>Patates Kızartması</h3>
+            <div class="price">₺130</div>
+        </div>
+
+        <div class="card">
+            <h3>İçli Köfte(Adet)</h3>
+            <div class="price">₺90</div>
+        </div>
+
+        <div class="card">
+            <h3>Mantı(Porsiyon | 200gr)</h3>
+            <div class="price">₺400</div>
+        </div>
+
+        <div class="card">
+            <h3>Cevizli Mantı(Porsiyon | 200gr)</h3>
+            <div class="price">₺425</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ATIŞTIRMALIK -->
+<section id="atistirmalik">
+    <h2>Atıştırmalıklar</h2>
+    <div class="menu-container">
+        <div class="card">
+            <h3>Tuzlu Fıstık(90 gr)</h3>
+            <div class="price">₺100</div>
+        </div>
+
+        <div class="card">
+            <h3>Lüx Çerez Tabağı(90 gr)</h3>
+            <div class="price">₺220</div>
+        </div>
+
+        <div class="card">
+            <h3>Cips(113 gr)</h3>
+            <div class="price">₺150</div>
+        </div>
+
+    </div>
+</section>
 
 <footer>
-    © 2026 Nairobi Cafe | Afiyet olsun ☕
+    © 2026 NAIROBI CAFE | Tüm Hakları Saklıdır
 </footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', ()=>{
+    cards.forEach(card=>{
+        const cardTop = card.getBoundingClientRect().top;
+        const triggerBottom = window.innerHeight * 0.85;
+
+        if(cardTop < triggerBottom){
+            card.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
+</html>
+
